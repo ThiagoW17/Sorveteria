@@ -1,6 +1,3 @@
-/**
- * Cookie
- */
 public class Cookie extends ItemSobremesa {
 	private int numero;
 	private int precoPorDuzia;
