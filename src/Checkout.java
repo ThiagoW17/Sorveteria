@@ -1,49 +1,25 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Mantém uma lista de referências de ItemSobremesa. Não há limites quanto ao
- * número de ItemSobremesa na lista
- *
- * @author Rodrigo Gregori
- *
- */
 public class Checkout {
 	private List<ItemSobremesa> itens;
 
-	/**
-	 * Cria uma instância com uma lista vazia de ItemSobremesa
-	 */
 	public Checkout() {
 		itens = new ArrayList<>();
 	}
-	/**
-	 * Limpa a lista para iniciar a compra de novos itens
-	 */
+
 	public void esvazia() {
 		itens.clear();
 	}
-	/**
-	 * Insere um ItemSobremesa ao final da lista de itens
-	 *
-	 * @param item Um item de sobremesa
-	 */
+
 	public void insereItem(ItemSobremesa item) {
 		itens.add(item);
 	}
-	/**
-	 * Retorna o número de itens na lista
-	 *
-	 * @return O número de itens
-	 */
+
 	public int numeroDeItens() {
 		return itens.size();
 	}
-	/**
-	 * Retorna o custo total dos itens, em centavos (sem impostos)
-	 *
-	 * @return O custo total dos itens
-	 */
+
 	public int custoTotal() {
 		int custoTotal = 0;
 
@@ -52,11 +28,7 @@ public class Checkout {
 		}
 		return custoTotal;
 	}
-	/**
-	 * Retorna o total dos impostos dos itens, em centavos
-	 *
-	 * @return O total dos impostos
-	 */
+
 	public int impostoTotal() {
 		double imposto = Sorveteria.IMPOSTO;
 		int custoTotal = 0;
@@ -100,7 +72,7 @@ public class Checkout {
 			linha += "-";
 		saida += String.format("%24s\n\n", linha);
 
-		// gera itens
+
 		for (ItemSobremesa item : itens) {
 			saida += item.toString() + "\n";
 		}
