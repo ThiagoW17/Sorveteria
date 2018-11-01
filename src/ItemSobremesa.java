@@ -1,15 +1,12 @@
 // ItemSobremesa.java - Superclasse abstrata para Item de Sobremesa
 // Rodrigo Gregori, Out 2018
 // Baseado em Suzanne Balik
-
-
 /**
  * Superclasse abstrata para hierarquia de Item de Sobremesa
  * @author Rodrigo Gregori
  */
 public abstract class ItemSobremesa {
   protected String nome;
-
 /**
  * Construtor nulo para a classe ItemSobremesa
  */
@@ -37,5 +34,4 @@ public abstract class ItemSobremesa {
  * @return custo do ItemSobremesa
  */
   public abstract int getCusto();
-
 }
