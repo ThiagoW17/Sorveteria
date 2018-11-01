@@ -1,6 +1,3 @@
-/**
- * Sundae
- */
 public class Sundae extends Sorvete {
 	private String calda;
 	private int custoDaCalda;
