@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
 /**
  * GUI para a classe DessertItem
  * @author Rodrigo Gregori
@@ -18,7 +17,6 @@ public class CheckoutGUI extends JFrame implements ActionListener
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-
 	private Checkout checkout= new Checkout();
     private final static int INFO_SIZE = 30;
     private JTextField _info = new JTextField("Número de Ítens: 0",100);
@@ -38,11 +36,9 @@ public class CheckoutGUI extends JFrame implements ActionListener
     private JButton buttons2[];
     private JTextField tfields[];
     private JMenuItem menuitems[];
-
     private JMenuBar bar = new JMenuBar();
     private JMenu file = new JMenu("Arquivo");
     private int selecteditem=0;
-
     /**
      * Declares the Labels
      */
@@ -56,7 +52,6 @@ public class CheckoutGUI extends JFrame implements ActionListener
             labels[i].setEnabled(false);
         }
     }
-
     /**
      * Declares the Buttons
      */
@@ -67,10 +62,8 @@ public class CheckoutGUI extends JFrame implements ActionListener
 		{
             buttons[i] = new JButton( bnomes[i]);
             buttons[i].addActionListener(this);
-
         }
     }
-
     /**
      * Declares the TextField
      */
@@ -83,7 +76,6 @@ public class CheckoutGUI extends JFrame implements ActionListener
             tfields[i].setEnabled(false);
         }
     }
-
     /**
      * Declares the Enter and Total Buttons
      */
@@ -95,7 +87,6 @@ public class CheckoutGUI extends JFrame implements ActionListener
             buttons2[i].addActionListener(this);
         }
     }
-
     private void setmenubar()
 	{
         menuitems = new JMenuItem[mnomes.length];
@@ -104,9 +95,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
             menuitems[i] = new JMenuItem(mnomes[i]);
             menuitems[i].addActionListener(this);
         }
-
     }
-
     public CheckoutGUI(Checkout checkout)
 	{
         super("CheckoutGUI");
@@ -121,9 +110,6 @@ public class CheckoutGUI extends JFrame implements ActionListener
         ContainerSetup();
         setVisible(true);
     }
-
-
-
     public void actionPerformed( ActionEvent e)
 	{
         Object source = e.getSource();
