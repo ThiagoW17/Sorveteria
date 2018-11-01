@@ -11,20 +11,15 @@ public class Sorveteria {
 			s += "-";
 			centavos *= -1;
 		}
-
 		int reais = centavos / 100;
 		centavos = centavos % 100;
-
 		if (reais == 0)
 			s += "0";
 		else if (reais > 0)
 			s += reais;
-
 		s += ",";
-
 		if (centavos < 10)
 			s += "0";
-
 		s += centavos;
 		return s;
 	}
