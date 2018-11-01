@@ -1,6 +1,4 @@
-/**
- * Doce
- */
+
 public class Doce extends ItemSobremesa {
 	private Double peso;
 	private int precoPorQuilo;
