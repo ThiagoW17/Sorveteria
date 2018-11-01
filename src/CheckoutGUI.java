@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * GUI para a classe DessertItem 
+ * GUI para a classe DessertItem
  * @author Rodrigo Gregori
  * baseado no trabalho de Frederick Livingston, Mike Romeo
  * limitação:
@@ -12,20 +12,20 @@ import java.awt.event.*;
  * Peso: Deve ser um double
  * Preço/kg, Preço/dz, Número: Só pode conter inteiros
  */
-public class CheckoutGUI extends JFrame implements ActionListener 
+public class CheckoutGUI extends JFrame implements ActionListener
 {
     /**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private Checkout checkout= new Checkout();
     private final static int INFO_SIZE = 30;
     private JTextField _info = new JTextField("Número de Ítens: 0",100);
 
     private String bnomes[]={ "Sorvete", "Doce", "Cookies", "Sundae"};
 //    private String lnomes[]={"NOme", "Preço", "Peso", "Preço/kg", "Preço/dz", "Número"};
-    private String lnomes[] = 
+    private String lnomes[] =
 	{
 		"Nome", "Preço", "Peso", "Preço/g", "Preço/dz", "Número", "Cobertura",
 		"Preço da Cobertura"
@@ -35,7 +35,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
 
     private JButton buttons[];
     private JLabel labels[];
-    private JButton buttons2[];   
+    private JButton buttons2[];
     private JTextField tfields[];
     private JMenuItem menuitems[];
 
@@ -49,7 +49,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
     private void setlabels()
 	{
         labels = new JLabel[lnomes.length];
-        for (int i =0; i < lnomes.length; i++) 
+        for (int i =0; i < lnomes.length; i++)
 		{
             labels[i] = new JLabel(lnomes[i]);
             labels[i].setHorizontalAlignment(SwingConstants.CENTER);
@@ -63,7 +63,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
     private void setbuttons()
 	{
         buttons = new JButton[bnomes.length];
-        for (int i=0; i< bnomes.length; i++) 
+        for (int i=0; i< bnomes.length; i++)
 		{
             buttons[i] = new JButton( bnomes[i]);
             buttons[i].addActionListener(this);
@@ -77,7 +77,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
     private void settextfield()
 	{
         tfields = new JTextField[lnomes.length];
-        for (int i=0; i < lnomes.length; i++) 
+        for (int i=0; i < lnomes.length; i++)
 		{
             tfields[i] = new JTextField(INFO_SIZE);
             tfields[i].setEnabled(false);
@@ -89,7 +89,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
      */
     private void setbutton2(){
         buttons2 = new JButton[bnomes2.length];
-        for (int i =0; i < bnomes2.length; i++) 
+        for (int i =0; i < bnomes2.length; i++)
 		{
             buttons2[i] = new JButton(bnomes2[i]);
             buttons2[i].addActionListener(this);
@@ -99,7 +99,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
     private void setmenubar()
 	{
         menuitems = new JMenuItem[mnomes.length];
-        for (int i=0; i <mnomes.length; i++) 
+        for (int i=0; i <mnomes.length; i++)
 		{
             menuitems[i] = new JMenuItem(mnomes[i]);
             menuitems[i].addActionListener(this);
@@ -178,26 +178,26 @@ public class CheckoutGUI extends JFrame implements ActionListener
             inablebuttonsAll();
             disableinfoAll();
 
-            try 
+            try
 			{
-				switch (selecteditem) 
+				switch (selecteditem)
 				{
 					case 0: //Sorvete
 						checkout.insereItem( new Sorvete(
-							tfields[0].getText(), 
+							tfields[0].getText(),
 							Integer.parseInt(tfields[1].getText())
 						));
 						break;
 					case 1:  //Doce
 					    checkout.insereItem( new Doce(
 							tfields[0].getText(),
-							Double.parseDouble(tfields[2].getText()), 
+							Double.parseDouble(tfields[2].getText()),
 							Integer.parseInt(tfields[3].getText())
 						));
 						break;
 					case 2: //Cookies
 						checkout.insereItem( new Cookie(
-							tfields[0].getText(), 
+							tfields[0].getText(),
 							Integer.parseInt(tfields[5].getText()),
 							Integer.parseInt(tfields[4].getText())
 						));
@@ -216,14 +216,14 @@ public class CheckoutGUI extends JFrame implements ActionListener
                 _info.setText("Número de ítens: "+checkout.numeroDeItens());
             } // end try
 
-            catch (Exception ref) 
+            catch (Exception ref)
 			{
                 _info.setText("Entrada inválida, Número de Ítens: "
 					+ checkout.numeroDeItens()
 				);
             }
 
-            finally 
+            finally
 			{
                 resetinfo();
             }
@@ -240,7 +240,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
 
         for (int i=0; i <buttons.length; i++)  //types
 		{
-            if (source == buttons[i]) 
+            if (source == buttons[i])
 			{
                 disablebuttons(i);
             }
@@ -249,7 +249,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
 
     private void resetinfo()
 	{
-        for (int i=0; i< lnomes.length; i++) 
+        for (int i=0; i< lnomes.length; i++)
 		{
             tfields[i].setText("");
         }
@@ -257,7 +257,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
 
     private void disablebuttons(int b)
 	{
-        for (int i=0; i< buttons.length; i++) 
+        for (int i=0; i< buttons.length; i++)
 		{
             if (b != i) buttons[i].setEnabled(false);
         }
@@ -265,7 +265,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
 
     private void inablebuttonsAll()
 	{
-        for (int i=0; i< buttons.length; i++) 
+        for (int i=0; i< buttons.length; i++)
 		{
             buttons[i].setEnabled(true);
         }
@@ -273,9 +273,9 @@ public class CheckoutGUI extends JFrame implements ActionListener
 
     private void inableinfo(int b)
 	{
-        for (int i=0; i< lnomes.length; i++) 
+        for (int i=0; i< lnomes.length; i++)
 		{
-            if (b ==i) 
+            if (b ==i)
 			{
                 labels[i].setEnabled(true);
                 tfields[i].setEnabled(true);
@@ -285,19 +285,19 @@ public class CheckoutGUI extends JFrame implements ActionListener
 
     private void disableinfoAll()
 	{
-        for (int i=0; i <lnomes.length; i++) 
+        for (int i=0; i <lnomes.length; i++)
 		{
             labels[i].setEnabled(false);
             tfields[i].setEnabled(false);
         }
     }
 
-    class ReceiptGUI 
+    class ReceiptGUI
 	{
 
         private JTextArea text = new JTextArea();
         private JFrame receipt = new JFrame("Cupom Fiscal");
-        
+
 		public ReceiptGUI(String info)
 		{
             Container p = receipt.getContentPane();
@@ -332,7 +332,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
         JPanel cpanel = new JPanel();
         cpanel.setBorder(BorderFactory.createLoweredBevelBorder());
         cpanel.setLayout(new GridLayout(lnomes.length,2));
-        for (int i=0; i < lnomes.length; i++) 
+        for (int i=0; i < lnomes.length; i++)
 		{
             cpanel.add(labels[i]);
             cpanel.add(tfields[i]);
@@ -352,7 +352,7 @@ public class CheckoutGUI extends JFrame implements ActionListener
 
         app.addWindowListener( new WindowAdapter()
 		{
-			public void windowClosing(WindowEvent e) { System.exit(0); } 
+			public void windowClosing(WindowEvent e) { System.exit(0); }
 		});
 
     }
