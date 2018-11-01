@@ -17,14 +17,12 @@ public class Checkout {
 	public Checkout() {
 		itens = new ArrayList<>();
 	}
-
 	/**
 	 * Limpa a lista para iniciar a compra de novos itens
 	 */
 	public void esvazia() {
 		itens.clear();
 	}
-
 	/**
 	 * Insere um ItemSobremesa ao final da lista de itens
 	 *
@@ -33,7 +31,6 @@ public class Checkout {
 	public void insereItem(ItemSobremesa item) {
 		itens.add(item);
 	}
-
 	/**
 	 * Retorna o número de itens na lista
 	 *
@@ -42,7 +39,6 @@ public class Checkout {
 	public int numeroDeItens() {
 		return itens.size();
 	}
-
 	/**
 	 * Retorna o custo total dos itens, em centavos (sem impostos)
 	 *
@@ -56,7 +52,6 @@ public class Checkout {
 		}
 		return custoTotal;
 	}
-
 	/**
 	 * Retorna o total dos impostos dos itens, em centavos
 	 *
@@ -69,10 +64,8 @@ public class Checkout {
 		for (ItemSobremesa item : itens) {
 			custoTotal += Math.round((item.getCusto() * imposto) / 100);
 		}
-
 		return custoTotal;
 	}
-
 	/**
 	 * Retorna uma string representando o cupom fiscal, da lista de itens atual
 	 *
@@ -116,5 +109,4 @@ public class Checkout {
 				Sorveteria.centavos2ReaisECentavos(custoTotal() + impostoTotal()));
 		return saida;
 	}
-
 }
